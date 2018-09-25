@@ -70,7 +70,10 @@ function makeLegacyAuthToken(challengeText: string, signerKeyHex: string): strin
   }
 }
 
-function makeV1GaiaAuthToken(hubInfo: Object, signerKeyHex: string, hubUrl: string, scopes?: Array<AuthScopeType>): string {
+function makeV1GaiaAuthToken(hubInfo: Object, 
+                             signerKeyHex: string, 
+                             hubUrl: string, 
+                             scopes?: Array<AuthScopeType>): string {
   const challengeText = hubInfo.challenge_text
   const handlesV1Auth = (hubInfo.latest_auth_version
                          && parseInt(hubInfo.latest_auth_version.slice(1), 10) >= 1)
